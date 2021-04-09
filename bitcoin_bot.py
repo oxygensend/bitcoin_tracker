@@ -11,6 +11,7 @@ class Bitcoin_tracker():
         self.chat_id =  chat_id
         self.threshold = threshold
         self.wait_time = wait_time
+        self.n = 0
 
     def run(self):
         
@@ -25,11 +26,11 @@ class Bitcoin_tracker():
                     continue
                 self.send_message(msg=f'BTC Price USD: {btc_usd}\nBTC Price PLN: {btc_pln}') 
                 time.sleep(self.wait_time)
-                n=0
+                self.n=0
             except ConnectionError:
                 time.sleep(10)
-                n+=1
-                if(n >= 180):
+                self.n+=1
+                if(self.n >= 180):
                     sys.exit()
                     
 
