@@ -16,8 +16,8 @@ class Bitcoin_tracker():
         
         while True:
             try:
-                btc_usd = self.get_btc_price() 
-                usd = self.get_usd_price()
+                btc_usd = round(self.get_btc_price(),2)
+                usd = round(self.get_usd_price(),2)
                 btc_pln = btc_usd * usd
                 if btc_pln < self.threshold:
                     self.send_message(msg=f'BTC Price USD: {btc_usd}\nBTC Price PLN: {btc_pln}') 
