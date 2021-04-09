@@ -2,6 +2,7 @@
 Bot to informing what is the bitcoin's price per hour
 The aim of this bot is to informing what is the newest bitcoin's price.
 Bot sends a message in Telegram aplication per hour with price in USD and PLN.
+Bot sends u massage also when price goes down the threshold limit
 Bot is waiting 30min if there is no internet connection and then turns off
 
 Data is taken from CoinMartker API and Narodowy Ban Polski API for the first api key is needed
