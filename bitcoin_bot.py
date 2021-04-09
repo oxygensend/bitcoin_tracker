@@ -1,6 +1,7 @@
 import requests
 import time
 from requests.exceptions import ConnectionError
+import sys
 class Bitcoin_tracker():
     """Taking currency values from api data"""
 
@@ -24,9 +25,13 @@ class Bitcoin_tracker():
                     continue
                 self.send_message(msg=f'BTC Price USD: {btc_usd}\nBTC Price PLN: {btc_pln}') 
                 time.sleep(self.wait_time)
+                n=0
             except ConnectionError:
                 time.sleep(10)
-                
+                n+=1
+                if(n >= 180):
+                    sys.exit()
+                    
 
     def get_btc_price(self):
         
@@ -51,6 +56,7 @@ class Bitcoin_tracker():
         return usd['rates'][0]['bid']
 
     def send_message(self,msg):
+        
         url = f"https://api.telegram.org/bot{self.bot_token}/sendMessage?chat_id={self.chat_id}&text={msg}"
         requests.get(url)
 
