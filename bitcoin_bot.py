@@ -5,8 +5,8 @@ class Bitcoin_tracker():
     """Taking currency values from api data"""
 
     def __init__(self, chat_id,wait_time, threshold):
-        self.api_key = '9ee3c484-46ff-4628-b074-7b4ced9642da'
-        self.bot_token = '1643630027:AAFbQraFKVCqlyt53tY4ySrxjfxsFTjVxFw'
+        self.api_key = 'your_api_key_for_coinmarket'
+        self.bot_token = 'ur_bot_token_api'
         self.chat_id =  chat_id
         self.threshold = threshold
         self.wait_time = wait_time
@@ -26,12 +26,10 @@ class Bitcoin_tracker():
                 time.sleep(self.wait_time)
             except ConnectionError:
                 time.sleep(10)
-
-
-            
-            
+                
 
     def get_btc_price(self):
+        
         url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
         headers = {
             'Accepts': 'application/json',
@@ -43,6 +41,7 @@ class Bitcoin_tracker():
         return bitcoin_price['quote']['USD']['price']
 
     def get_usd_price(self):
+        
         url = 'http://api.nbp.pl/api/exchangerates/rates/c/usd/today/'
         headers = {
             'Accepts': 'application/json'
@@ -56,5 +55,5 @@ class Bitcoin_tracker():
         requests.get(url)
 
 
-instance = Bitcoin_tracker(chat_id='1709304356',wait_time=3600, threshold=214000)
+instance = Bitcoin_tracker(chat_id='ur_chat_id',wait_time=3600, threshold=214000)
 instance.run()
