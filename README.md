@@ -6,7 +6,7 @@ Bot is waiting 30min if there is no internet connection and then turns off
 
 
 
-To run this script automatically with system booting follow this code:
+To run this script automatically with system booting on Ubuntu follow this steps:
 
 1.Create a new file in systemd directory with .service suffix
   `vim /etc/systemd/system/btc_tracker.service`
