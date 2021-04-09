@@ -2,6 +2,9 @@
 Bot to informing what is the bitcoin's price per hour
 The aim of this bot is to informing what is the newest bitcoin's price.
 Bot sends a message in Telegram aplication per hour with price in USD and PLN.
+Bot is waiting 30min if there is no internet connection and then turns off
+
+
 
 To run this script automatically with system booting follow this code:
 
