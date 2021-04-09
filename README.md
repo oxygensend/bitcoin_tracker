@@ -15,9 +15,9 @@ with following code
   `systemctl daemon-reload`
 
 3. Try if everything works
- `service btc_tracker start
- systemctl status btc_tracker.service
- service btc_tracker stop`
+ `service btc_tracker start`
+ `systemctl status btc_tracker.service`
+ `service btc_tracker stop`
 
 4. Mark this script as enable
   `service btc_tracker enable`
